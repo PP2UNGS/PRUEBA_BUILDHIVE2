@@ -4,8 +4,8 @@
 	<groupId>VE</groupId>
 	<artifactId>VE</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Voto Electronico</name>
-	<description>Voto Electronico Presupuesto Participativo</description>
+	<name>Pruebas Maven-Jenkins</name>
+	<description>Tratando de correr los plugins de cobertura</description>
 
 
 	<developers>
@@ -17,35 +17,7 @@
 		</developer>
 	</developers>
 
-	<build>
-  <plugins>
-   
-    <plugin>
-      <artifactId>maven-failsafe-plugin</artifactId>
-      <version>2.14.1</version>
-      <dependencies>
-        <dependency>
-          <groupId>org.apache.maven.surefire</groupId>
-          <artifactId>surefire-junit47</artifactId>
-          <version>2.14.1</version>
-        </dependency>
-      </dependencies>
-      <configuration>
-        <testFailureIgnore>true</testFailureIgnore>
-      </configuration>
-      <executions>
-        <execution>
-          <goals>
-            <goal>integration-test</goal>
-            <goal>verify</goal>
-          </goals>
-        </execution>
-      </executions>
-    </plugin>
-  </plugins>
-</build>
 	
-
 	<properties>
 		<!-- Generic properties -->
 		<java.version>1.7</java.version>
@@ -67,12 +39,22 @@
 			<scope>test</scope>
 		</dependency>
 		
-    
-
-				
-
-		
 	</dependencies>
+	<reporting>
+    <plugins>
+      
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>cobertura-maven-plugin</artifactId>
+        <configuration>
+          <formats>
+            <format>html</format>
+            <format>xml</format>
+          </formats>
+        </configuration>
+      </plugin>
+    </plugins>
+  </reporting>
 
 	
 </project>
